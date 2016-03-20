@@ -5,4 +5,4 @@ public MallardDuck extends Duck{
     quackBehavior = Quack;
     flyBehavior= new flyBehavior();
   }
-  
+}
