@@ -1,0 +1,71 @@
+﻿SorterMain2의 SOLID원칙이 적용된 부분
+201511454 송찬훈
+
+1.Single Responsibility Principle{
+​하나의  클래스는 하나의 책임을 져야한다. 여기서 책임은 수정에 대한 책임이다. (하나의 클래스는 기능이 하나만 있어야 한다.
+}
+class DateComparator implements Comparator {
+    public DateComparator() {}
+    public int compare(Object o1, Object o2) {
+      return ((Date) o1).compareTo((Date) o2);
+    }
+} 
+위 코드에서 클래스 하나의 클래스의 한가지의 기능을 수행하므로 srp를 만족한다
+
+2. OCP
+기능을 확장할 경우, 수정이 없도록 (최소화)
+변동부분의 분리
+모든 함수를 갖고 있는 클래스를 구현 (Duck: fly, quack)
+다른 하위클래스는 구현된 구체적인 클래스를 사용하게 되면
+어떤 클래스가 추가가 될 경우 (fly/quack를 다 할 수 없는 클래스)
+고치기 어려움.
+따라서 변동할 수 있는 fly/quack
+인터페이스를 보고 프로그래밍
+
+class Sorter {
+  public Sorter() {}
+    public static void sort(Object[] data, Comparator comp) {
+        for(int i=data.length-1; i>=1; i--) {
+            int indexOfMax=0;
+            for(int j=1; j<=i; j++) {
+                if(comp.compare(data[j], data[indexOfMax]) > 0)
+                    indexOfMax=j;
+                }
+                Object temp=data[i];
+                data[i]=data[indexOfMax];
+                data[indexOfMax]=temp;
+        }
+    }
+}수정이 없는 비교하는 기능만을 최소화하여 클래스로 구현했으므로 OCP를 만족한다.
+
+
+3. LSP
+자식클래스는 부모클래스를 대체할 수 있어야 함. Subclasses should be substitutable for their base classes.
+원과 타원의 문제 The Circle/Ellipse Dilemma
+정사각형과 직사각형의 문제 Rectangle
+도형으로 정사각형은 사각형이지만, 상속으로 보면 정사각형은 사각형이 아니다.
+정사각형, 직사각형은 크기를 늘리면 다르게 반응한다. 정사각형은 가로, 세로가 같아서 대각선으로 커진다. 반면 직사각형은 가로, 세로를 따로 크게할 수 있다. 이런 경우, 상속으로 정사각형을 정의하는 것이 맞지 않다.
+즉 is-a라고 해서 상속을 사용하면 안됨.
+class IntegerComparator implements Comparator {
+    public IntegerComparator() {}
+    public int compare(Object o1, Object o2) {
+        return (Integer)o1 - (Integer)o2;
+    }
+}Comparator의 모든 것을 상속받으므로 lsp를 만족한다.
+
+4. Dependency Inversion Principle
+Depend upon Abstractions. Do not depend upon concretions
+인터페이스, 추상클래스, 추상메소드를 사용. 구현클래스를 사용하지 말 것.
+문의 경우 클라이언트는 추상클래스(base class)를 사용했슴. 구체클래스를 사용하지 않았음.
+
+class IntegerComparator implements Comparator 
+
+구체클래스를 사용하지 않았으므로 Dependency Inversion Principle를 만족한다.
+
+5.Interface Segregation Principle
+객체에서 나누어지는 서로 다른 기능이 있는 경우, 인터페이스로 분리
+interface Comparator {
+    public int compare(Object o1, Object o2);
+    public boolean equals(Object o);
+}
+인터페이스로 분리했으므로 Interface Segregation Principle를 만족한다.

@@ -1,23 +1,20 @@
 /*
- * @auther sch
- * @since 20160314
- * */
-
+ * @author jsl
+ * @since 20160312
+ */
 package com.sd.turtle;
+
+import java.awt.Color;
 import ch.aplu.turtle.*;
 
-public class WeightTurtle extents Tutle{
-  Turtle t1 = new Turtle();
-  private int weigh;
-  public WeightTutle(int w){
-   weight = w;
-   
-    
-  }
-    +getWeight().int
-      
-      
-  public static void main(String[] args) {
-    new TurtleDemoMain();
-  }
+public class WeightTurtle extends Turtle {
+    protected int weight;
+    public WeightTurtle(int w) {
+        weight=w;
+        setColor(Color.red);
+        setPenColor(Color.red);
+    }
+    public int getWeight() {
+        return weight;
+    }
 }

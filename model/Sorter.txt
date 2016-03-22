@@ -1,0 +1,16 @@
+@startuml
+interface Comparator {
+    +compare(Object o1, Object o2):int
+}
+
+class Sorter {
+    +sort(Object[], Comparator):void
+}
+Comparator <|.. StringComparator
+Comparator <|.. DateComparator
+Comparator <|.. ReverseComparator
+Comparator <|.. IntegerComparater
+Comparator <.. Sorter
+SorterMain .up.> Comparator
+SorterMain .up.> Sorter
+@enduml
