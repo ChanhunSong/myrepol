@@ -3,7 +3,7 @@ package com.j2.w3;
 import java.util.Date;
 import com.sd.turtle.WeightTurtle;
 
-public class SorterMain2 {
+public class SorterMainV2 {
     public static void main(String[] args) {
         String[] B={"John", "Adam", "Skrien", "Smith", "Jones"};
         Comparator stringComp=new StringComparator();
