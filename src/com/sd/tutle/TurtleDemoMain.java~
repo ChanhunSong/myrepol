@@ -19,8 +19,6 @@ class TurtleDemoMain {
     t1.right(90);
     t1.forward(100);
     t1.right(90);
-    
-    System.out.println(t1.getPos().getX());
   }
 
   public static void main(String[] args) {
