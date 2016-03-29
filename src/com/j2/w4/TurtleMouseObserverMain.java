@@ -1,10 +1,11 @@
 package com.j2.w4;
 
 import java.awt.event.MouseAdapter;
+import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseEvent;
-import ch.aplu.turtle.*;
-import java.awt.goem.*;
 
+import ch.aplu.turtle.*;
+import java.awt.geom.Point2D;
   
 
 class TurtleMouseListener extends Turtle {
@@ -12,24 +13,33 @@ class TurtleMouseListener extends Turtle {
     addMouseListener(new MouseAdapter(){
       public void mousePressed(MouseEvent e){
         Point2D.Double p;
+        double d;
+        double w;
         p = toTurtlePos(e.getPoint());
         d= distance(p);
         w= towards(p);
         heading(w);
-        forvward(d);
-        setStatusText("pos"+p.toSting());
+        forward(d);
+        setStatusText("moving to"+p.toString());
       }
     });
-    addMouseMotionListener(new MouseEvent() {
+    
+    addMouseListener(new MouseAdapter(){
+      public void mouseReleased(MouseEvent e){
+         setStatusText("mouse released");
+      }
+    });
+    
+    addMouseMotionListener(new MouseMotionAdapter(){
       public void mouseDragged(MouseEvent e) {
       Point2D.Double p;
-      double d;
-      double w;
       
       p= toTurtlePos(e.getPoint());
+      
       moveTo(p);
-      setStatusText("pos" +p,toString());
+      setStatusText("dragging to" +p.toString());
       }
+      
       });
     }
 }

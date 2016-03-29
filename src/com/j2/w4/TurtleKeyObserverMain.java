@@ -18,10 +18,23 @@ class TurtleKeyListener extends Turtle {
         setStatusText("for20");
         forward(20);
         break;
+        
       case KeyEvent.VK_DOWN:
         setStatusText("back20");
         back(20);
         break;  
+       case KeyEvent.VK_RIGHT:
+        setStatusText("right20");
+        right(90);
+        forward(20);
+        break;
+        
+       case KeyEvent.VK_LEFT:
+        setStatusText("left20");
+        left(90);
+        forward(20);
+        break;
+        
       case KeyEvent.VK_Q:
         setStatusText("Q");
         break;  

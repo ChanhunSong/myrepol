@@ -35,7 +35,7 @@ class TurtleKeyListener extends Turtle {
 
 public class TurtleKeyObserverMain {
   public static void main(String[] args) {
-    TurtleKeylistener t =new TurtleKeylistener();
+    TurtleKeyListener t =new TurtleKeyListener();
     t.addStatusBar(20);
       t.setStatusText("press any key");
   }
