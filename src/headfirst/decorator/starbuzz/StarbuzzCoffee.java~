@@ -1,6 +1,6 @@
 package headfirst.decorator.starbuzz;
 
-public abstract class Beverage {
+abstract class Beverage {
     String description = "Unknown Beverage";
     public String getDescription() {
         return description;
@@ -8,7 +8,7 @@ public abstract class Beverage {
     public abstract double cost();
 }
 
-public class Espresso extends Beverage {
+class Espresso extends Beverage {
   
   public Espresso() {
     description = "Espresso";
@@ -18,7 +18,7 @@ public class Espresso extends Beverage {
   }
 }  
 
-public class DarkRoast extends Beverage {
+class DarkRoast extends Beverage {
   public DarkRoast() {
     description = "Dark Roast Coffee";
   }
@@ -27,13 +27,13 @@ public class DarkRoast extends Beverage {
   }
 }
 
-class CondimentDecorator extends Beverage {
+abstract class CondimentDecorator extends Beverage {
     Beverage beverage;
     public abstract String getDescription();//super class fountion die
 }    
 
 
-public class Mocha extends CondimentDecorator {
+class Mocha extends CondimentDecorator {
     Beverage beverage;
     public Mocha(Beverage b) {//ex1
         beverage = b;
@@ -42,11 +42,11 @@ public class Mocha extends CondimentDecorator {
         return beverage.getDescription() + ", Mocha";
     }
     public double cost() {
-        return  beverage.cost + .20 ();
+        return  beverage.cost() + .20 ;
     }
 }
 
-public class Whip extends CondimentDecorator {
+class Whip extends CondimentDecorator {
     Beverage beverage;
     public Whip(Beverage b) {
         beverage = b;
@@ -63,9 +63,9 @@ public class StarbuzzCoffee {
     public static void main(String args[]) {
       
         Beverage b = new DarkRoast();//ex3
-        beverage mb= new Mocha(b);
-        beverage wmb = new Whip(mb);
-        System.out.println(wmb.getDescription() 
+        Beverage mb= new Mocha(b);
+        Beverage wmb = new Whip(mb);
+        System.out.println(wmb.getDescription());
         System.out.println(wmb.cost());
  
  

@@ -27,9 +27,28 @@ class DarkRoast extends Beverage {
   }
 }
 
+class Decaf extends Beverage {
+ public Decaf() {
+  description = "Decaf Coffee";
+ }
+ public double cost() {
+  return 1.05;
+ }
+}
+
+
+public class HouseBlend extends Beverage {
+ public HouseBlend() {
+  description = "House Blend Coffee";
+ }
+ public double cost() {
+  return .89;
+ }
+}
+
 abstract class CondimentDecorator extends Beverage {
     Beverage beverage;
-    public abstract String getDescription();//super class fountion die
+    public abstract String getDescription();
 }    
 
 
@@ -58,6 +77,33 @@ class Whip extends CondimentDecorator {
         return .10 + beverage.cost();
     }
 }
+
+class Milk extends CondimentDecorator {
+    Beverage beverage;
+    public Milk(Beverage beverage) {
+        this.beverage = beverage;
+    }
+    public String getDescription() {
+        return beverage.getDescription() + ", Milk";
+    }
+    public double cost() {
+        return .10 + beverage.cost();
+    }
+}
+
+class Soy extends CondimentDecorator {
+    Beverage beverage;
+    public Soy(Beverage beverage) {
+        this.beverage = beverage;
+    }
+    public String getDescription() {
+        return beverage.getDescription() + ", Soy";
+    }
+    public double cost() {
+        return .15 + beverage.cost();
+    }
+}
+
 
 public class StarbuzzCoffee {
     public static void main(String args[]) {
