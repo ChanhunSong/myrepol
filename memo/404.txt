@@ -1,0 +1,45 @@
+404
+
+@startuml
+class Component{
+    getDiscription()
+    cost()
+}
+class Decorater{
+    c:Component
+    }
+
+Component <|-- Decorater
+Component <|--ConcreteComponent0
+Component <|--ConcreteComponent1
+
+Component *-- Decorater
+
+Decorater  <|-- ConcreteComponent
+@enduml
+데코레이터
+
+client메인함수포함 클래스
+
+client -> Beverarge
+Beverarge -> HouseBlend:b3=new();
+client -> Soy:new(b3)
+가 데코레이터 구동 방식
+
+음성 동영상  >>바이너리 파일 >> 스트링 방식 사용
+
+파일 >> 리더방식 사용
+
+자바 IO >> 데코레이터
+
+Buffered  번역: 여분 남는 저장소
+
+BufferedInputStream bis=new BufferedInputStream(isReadme)//버퍼로 데콜이터 함
+
+파일에서 헬로우를 쓰면 문자열에 헬로우 텍스트를 쓰면 ioㄴ는 매번 안하는 특징을 가짐 강제로 하려면 flush
+
+throws >> 간단하게 예외처리를 위해 사용한다고 생각
+
+file 안에 한글이 있으면 깨짐  >> utf - 8 파일이 아니어서 
+
+InputStreamReader는 특이함 상속체계에 있지만 (인코딩 방식을 바꿔줌)
