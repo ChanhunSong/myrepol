@@ -1,0 +1,7 @@
+package com.j2.w7.pizzaaf;
+
+public interface PizzaIngredientFactory {
+ 
+  public Dough createDough();
+  public Cheese createCheese();
+}
