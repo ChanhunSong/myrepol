@@ -1,0 +1,1 @@
+package com.j2.w11.duckadapter;
