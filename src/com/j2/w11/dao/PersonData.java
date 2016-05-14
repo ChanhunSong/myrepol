@@ -4,14 +4,14 @@ import java.util.List;
 
 public class PersonData implements PersonDao {
 
-   List<Person> Person;
+   List<Person> people;
 
    public PersonData(){
       people = new ArrayList<Person>();
-      Student person1 = new Person("song chan hun",950829, "seoul");
-      Student person2 = new Person("song chan bin",900302,"seoul");
-      people.add(student1);
-      people.add(student2);  
+      Person person1 = new Person("song chan hun",950829, "seoul");
+      Person person2 = new Person("song chan bin",900302,"seoul");
+      people.add(person1);
+      people.add(person2);  
    }
    
    public void deletePerson(Person person) {
@@ -19,16 +19,16 @@ public class PersonData implements PersonDao {
       System.out.println("deleted from database");
    }
 
-   public List<Student> getAllStudents() {
+   public List<Person> getAllPerson() {
       return people;
    }
 
-   public Student getPerson(int rollNo) {
-      return people.get(rollNo);
+   public Person getPerson(int birthDate) {
+      return people.get(birthDate);
    }
    
    public void updatePerson(Person person) {
-      people.get(person.getRollNo()).setName(student.getName());
-      System.out.println("Student: Roll No " + student.getRollNo() + ", updated in the database");
+      people.get(person.getBirthDate()).setName(person.getName());
+      System.out.println("updated in the database");
    }
 }

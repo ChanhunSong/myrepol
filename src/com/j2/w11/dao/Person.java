@@ -3,7 +3,7 @@ public class Person {
    private String name;
    private int  birthDate;
    private String address;
-   Student(String name, int birthDate, String address){
+   Person(String name, int birthDate, String address){
       this.name = name;
       this.birthDate = birthDate;
       this.address = address;
