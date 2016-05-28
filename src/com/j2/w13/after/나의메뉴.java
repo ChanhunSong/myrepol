@@ -1,27 +1,21 @@
 package com.j2.w13.after;
 
-public class DinerMenu implements Menu {
+public class 나의메뉴  implements Menu {
     static final int MAX_ITEMS = 6;
     int numberOfItems = 0;
     MenuItem[] menuItems;
   
-    public DinerMenu() {
+    public 나의메뉴() {
         menuItems = new MenuItem[MAX_ITEMS];
  
-        addItem("Vegetarian BLT",
-                "(Fakin') Bacon with lettuce & tomato on whole wheat", true, 2.99);
-        addItem("BLT",
-                "Bacon with lettuce & tomato on whole wheat", false, 2.99);
-        addItem("Soup of the day",
-                "Soup of the day, with a side of potato salad", false, 3.29);
-        addItem("Hotdog",
-                "A hot dog, with saurkraut, relish, onions, topped with cheese", false, 3.05);
-        addItem("Steamed Veggies and Brown Rice",
-                "Steamed vegetables over brown rice", true, 3.99);
-        addItem("Pasta",
-                "Spaghetti with Marinara Sauce, and a slice of sourdough bread", true, 3.89);
-        addItem("콩짜장면",
-                "짜장 +면", true, 3.29);
+        addItem("불고기 ",
+                "불+고기", true, 2.99);
+        addItem("김치찌개",
+                "김치+찌개", false, 2.99);
+        addItem("짜장면",
+                "짜장 +면", false, 3.29);
+        addItem("초밥",
+                "회+밥", false, 3.05);
         addItem("스프",
                 "좋다", true, 3.99);
         addItem("우동",
