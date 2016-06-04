@@ -1,7 +1,7 @@
 package com.j2.w11.dao;
 public class Person {
    private String name;
-   private int  birthDate;
+   private String  birthDate;
    private String address;
    Person(String name, int birthDate, String address){
       this.name = name;
@@ -16,11 +16,11 @@ public class Person {
       this.name = name;
    }
 
-   public int getBirthDate() {
+   public String getBirthDate() {
       return birthDate;
    }
 
-   public void setBirthDate(int birthDate) {
+   public void setBirthDate(String birthDate) {
       this.birthDate = birthDate;
    }
    public String getAddress() {

@@ -8,8 +8,8 @@ public class PersonData implements PersonDao {
 
    public PersonData(){
       people = new ArrayList<Person>();
-      Person person1 = new Person("song chan hun",950829, "seoul");
-      Person person2 = new Person("song chan bin",900302,"seoul");
+      Person person1 = new Person("song chan hun","950829", "seoul");
+      Person person2 = new Person("song chan bin","900302","seoul");
       people.add(person1);
       people.add(person2);  
    }
