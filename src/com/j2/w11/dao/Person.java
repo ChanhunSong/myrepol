@@ -1,11 +1,11 @@
 package com.j2.w11.dao;
 public class Person {
    private String name;
-   private String  birthDate;
+   private String phoneNum;
    private String address;
-   Person(String name, int birthDate, String address){
+   Person(String name, String phoneNum, String address){
       this.name = name;
-      this.birthDate = birthDate;
+      this.phoneNum = phoneNum;
       this.address = address;
    }
    public String getName() {
@@ -16,13 +16,14 @@ public class Person {
       this.name = name;
    }
 
-   public String getBirthDate() {
-      return birthDate;
+   public String getPhoneNum() {
+      return phoneNum;
    }
 
-   public void setBirthDate(String birthDate) {
-      this.birthDate = birthDate;
+   public void setPhoneNum(String phoneNum) {
+      this.phoneNum = phoneNum;
    }
+   
    public String getAddress() {
       return address;
    }

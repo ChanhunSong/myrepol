@@ -3,7 +3,7 @@ import java.util.List;
 
 public interface PersonDao {
    public List<Person> getAllPerson();
-   public Person getPerson(String birthDate);
+   public void modifyPerson(Person person1, Person person2);
    public void updatePerson(Person person);
    public void deletePerson(Person person);
 }
